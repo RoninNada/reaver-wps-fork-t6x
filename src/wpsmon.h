@@ -53,7 +53,6 @@
 #include "builder.h"
 #include "session.h"
 
-
 #define INTERFACE       	0
 #define PCAP_FILE       	1
 

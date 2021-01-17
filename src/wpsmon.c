@@ -384,7 +384,7 @@ void monitor(char *bssid, int passive, int source, int channel, int mode)
 	}
 
 	while(!got_sigint && (packet = next_packet(&header))) {
-		parse_wps_settings(packet, &header, bssid, passive, mode, source &timerid);
+		parse_wps_settings(packet, &header, bssid, passive, mode, source, &timerid);
 		memset((void *) packet, 0, header.len);
 	}
 
@@ -455,11 +455,11 @@ void parse_wps_settings(const u_char *packet, struct pcap_pkthdr *header, char *
 
 			if(target != NULL && channel_changed == 0)
 			{
-				#ifndef NO_UALARM
+#ifndef NO_UALARM
 					ualarm(0, 0);
-				#else
+#else
 					timer_delete(*timerid);
-				#endif
+#endif
 				change_channel(channel);
 				channel_changed = 1;
 			}
