@@ -398,7 +398,7 @@ void monitor(char *bssid, int passive, int source, int channel, int mode)
    fixed parameters of size 12 */
 #define PROBE_RESP_SIZE(rth_len) BEACON_SIZE(rth_len)
 
-void parse_wps_settings(const u_char *packet, struct pcap_pkthdr *header, char *target, int passive, int mode, int source, timer_t *timerid))
+void parse_wps_settings(const u_char *packet, struct pcap_pkthdr *header, char *target, int passive, int mode, int source, timer_t *timerid)
 {
 	struct libwps_data *wps = NULL;
 	enum encryption_type encryption = NONE;
