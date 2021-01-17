@@ -456,9 +456,9 @@ void parse_wps_settings(const u_char *packet, struct pcap_pkthdr *header, char *
 			if(target != NULL && channel_changed == 0)
 			{
 #ifndef NO_UALARM
-					ualarm(0, 0);
+				ualarm(0, 0);
 #else
-					timer_delete(*timerid);
+				timer_delete(*timerid);
 #endif
 				change_channel(channel);
 				channel_changed = 1;
